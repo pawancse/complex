@@ -17,5 +17,5 @@ $(document).ready(function () {
                 }
             });
     }
-    setInterval(update, 60000);
+    setInterval(update, 300000);
 })

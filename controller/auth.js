@@ -16,7 +16,7 @@ exports.login = function (username, password) {
             let pass = bytes.toString(CryptoJS.enc.Utf8);
             if (pass === password) {
                 let token = jwt.sign({
-                    exp: Math.floor(Date.now() / 1000) + (60 * 30),
+                    exp: Math.floor(Date.now() / 1000) + (60 * 60),
                     data: rows[0],
                 }, process.env.jwtSecret);
                 response = {
