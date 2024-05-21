@@ -1,17 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const session = require('express-session');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy
-var crypto = require('crypto');
 require('dotenv').config();
 var db = require('./db/connection');
-
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/auth');
 
 var app = express();
 
@@ -22,40 +16,11 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
-  secret: "secret",
-  resave: false,
-  saveUninitialized: true,
-}));
-
-app.use(passport.initialize());
-
-app.use(passport.session());
-
-passport.use(new LocalStrategy(function verify(username, password, cb) {
-  db.createConnection();
-  let query = 'SELECT * FROM defaultdb.users WHERE username = \'' + username + '\'';
-  console.log(query);
-  return db.runQuery(query).then(function (row) {
-    console.log(row);
-    if (!row.length) { return cb(null, false, { message: 'Incorrect username or password.' }); }
-
-    crypto.pbkdf2(password, row.salt, 310000, 32, 'sha256', function (err, hashedPassword) {
-      if (err) { return cb(err); }
-      if (!crypto.timingSafeEqual(row.hashed_password, hashedPassword)) {
-        return cb(null, false, { message: 'Incorrect username or password.' });
-      }
-      return cb(null, row);
-    });
-    db.endConnection();
-  });
-}));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
+app.use('/auth', usersRouter);
+db.createConnection();
 
 
 // catch 404 and forward to error handler

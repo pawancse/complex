@@ -1,13 +1,56 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anjali Green Complex</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./images/AGCIcon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Anjali Green Complex
+            </a>
+        </div>
+    </nav>
+    <br />
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="row justify-content-center mb-20">Sign in</h1>
+                <form action="/auth/login" method="post" accept="application/json" content-type="application/json">
+                    <div class="row mb-4">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="username" name="username" required>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <h6> Use of this app is reserved to members of Anjali Green Complex. To register, please contact complex
+                committee. </h6>
+        </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

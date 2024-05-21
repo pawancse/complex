@@ -17,6 +17,7 @@ exports.createConnection = function () {
 
 exports.endConnection = function () {
     connection.end();
+    connection.destroy();
 };
 
 exports.runQuery = function (query) {
