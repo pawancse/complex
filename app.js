@@ -1,13 +1,20 @@
 var createError = require('http-errors');
 var express = require('express');
+const expressOasGenerator = require('express-oas-generator');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.yml');
 var path = require('path');
 var logger = require('morgan');
 require('dotenv').config();
 var db = require('./db/connection');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/auth');
+var dashboardRouter = require('./routes/dashboard');
 
 var app = express();
+
+expressOasGenerator.init(app, {});
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/auth', usersRouter);
+app.use('/dashboard', dashboardRouter);
 db.createConnection();
 
 

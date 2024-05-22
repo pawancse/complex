@@ -1,0 +1,5 @@
+openapi: '3.0.0'
+info:
+  title: 'Complex API Documentation'
+  description: 'This documentation could help UI developers to consume api created in this project'
+  version: '2.0'

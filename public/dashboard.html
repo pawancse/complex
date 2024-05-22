@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anjali Green Complex</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-3.7.1.js"></script>
+    <script src="../../js/dashboard.js"> </script>
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="profileImage" src="../../images/AGCIcon.png" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                <a id="firstNameLastName"></a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">AG Complex</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="post/createPost">Create Post</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Members
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Add Member</a></li>
+                                <li><a class="dropdown-item" href="#">Update Member</a></li>
+                                <li><a class="dropdown-item" href="#">Remove Member</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Maintenance
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Register</a></li>
+                                <li><a class="dropdown-item" href="#">View/Action</a></li>
+                                <li><a class="dropdown-item" href="#">Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Job Expenses
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Register</a></li>
+                                <li><a class="dropdown-item" href="#">View/Action</a></li>
+                                <li><a class="dropdown-item" href="#">Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Reports
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Overall</a></li>
+                                <li><a class="dropdown-item" href="#">Custom</a></li>
+                                <li><a class="dropdown-item" href="#">Chats</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br />
+                    <ul class="nav nav-pills justify-content-center">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="signout">Sign out</button>
+                        </li>
+                    </ul>
+                    <br />
+                    <ul class="nav nav-pills justify-content-center bottom">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Copyright</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br />
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+</html>
